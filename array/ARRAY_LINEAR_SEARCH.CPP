@@ -1,37 +1,34 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-
-void linear_Searching(int arro[], int size){
-    int element_searching=0;
-    cout<<"Enter the element to be searched : ";
-    cin>>element_searching;
-    cout<<endl;
-    int found = 0;
+void linear_searching(int arro[],int size,int element){
+    int found=0;
+    int index=0;
     for(int i=0;i<size;i++){
-        if(arro[i]==element_searching){
-            found = 1;
+        if(arro[i] == element){
+            found=1;
+            index= i;
         }
     }
-    if(found==1){
-        cout<<"YES, the element was found!"<<endl;
+    if(found == 1){
+        cout<<"The element is found at index : "<<index<<endl;
     }
     else{
-        cout<<"NO, the element was not found!"<<endl;
+        cout<<"Regret, the element is not found! "<<endl;
     }
     cout<<endl;
 }
 int main(){
     int size;
-    cout<<"Enter the size of the array to be : ";
+    cout<<"Enter the size of the array : ";
     cin>>size;
     int arro[size];
-    cout<<endl;
-    cout<<"Enter the elements of the array : ";
+    cout<<"\nEnter the array elements : ";
     for(int i=0;i<size;i++){
         cin>>arro[i];
     }
-    cout<<endl;
-    linear_Searching(arro,size);
-    
+    int element;
+    cout<<"\nEnter the element to be searched : ";
+    cin>>element;
+    linear_searching(arro,size,element);
     return 0;
 }
